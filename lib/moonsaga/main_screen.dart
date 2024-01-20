@@ -20,7 +20,8 @@ class MyGame extends FlameGame {
     dialogueBackground = RectangleComponent()
       ..size = Vector2(size.x - 40, 100)
       ..position = Vector2(20, size.y - 120)
-      ..paint = Paint(); // Semi-transparent white
+      ..paint = Paint()
+      ..setColor(Colors.white); // Semi-transparent white
     add(dialogueBackground);
 
     // Dialogue box
