@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:moonbook/game_chapter_one.dart';
 import 'package:moonbook/home.dart';
+import 'package:moonbook/moonsaga/main_screen.dart';
 import 'package:moonbook/resume.dart';
 import 'package:moonbook/utils.dart';
 
@@ -62,6 +63,13 @@ class _PortfolioMainPageState extends State<PortfolioMainPage> {
               },
             ),
             IconButton(
+                icon: Icon(Icons.science),
+                onPressed: () {
+                  setState(() {
+                    page = 3;
+                  });
+                }),
+            IconButton(
               icon: Icon(Icons.shield),
               onPressed: () {
                 launchUrlCheck('license');
@@ -80,6 +88,8 @@ class _PortfolioMainPageState extends State<PortfolioMainPage> {
         return MyGameApp();
       case 2:
         return ResumePage();
+      case 3:
+        return MoonSagaWidget();
       default:
         return PortfolioHomePage();
     }
