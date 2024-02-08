@@ -76,7 +76,12 @@ flutter_launcher_icons:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
-  - assets/
+  - assets/moon_icon.png
+  - assets/profile_image.jpg
+  - assets/rain.mp3
+  - assets/snake-icon.png
+  - assets/images/Terrain/
+  - assets/tiles/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

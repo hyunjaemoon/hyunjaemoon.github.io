@@ -1,3 +1,4 @@
+import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:moonbook/moonsaga/main_screen.dart';
 import 'package:audioplayers/audioplayers.dart';
@@ -123,7 +124,8 @@ class _IntroScreenState extends State<IntroScreen>
       if (status == AnimationStatus.completed) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => MoonSagaWidget()),
+          MaterialPageRoute(
+              builder: (context) => GameWidget(game: moonSagaInit())),
         );
       }
     });
