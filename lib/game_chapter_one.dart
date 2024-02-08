@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:moonbook/snake.dart';
+import 'package:moonbook/moonsaga/main_screen.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'dart:math';
 
@@ -123,7 +123,7 @@ class _IntroScreenState extends State<IntroScreen>
       if (status == AnimationStatus.completed) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => NextScreen()),
+          MaterialPageRoute(builder: (context) => MoonSagaWidget()),
         );
       }
     });
@@ -207,37 +207,6 @@ class _IntroScreenState extends State<IntroScreen>
           ),
         ),
       ]),
-    );
-  }
-}
-
-class NextScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Currently in Construction!',
-              style: TextStyle(fontSize: 20, color: Colors.white),
-            ),
-            SizedBox(height: 20), // Add some space
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to the SnakeGame widget
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SnakeGame()),
-                );
-              },
-              child: Text('Play Snake Game'),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

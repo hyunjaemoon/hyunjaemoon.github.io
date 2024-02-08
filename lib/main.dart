@@ -3,6 +3,7 @@ import 'package:moonbook/game_chapter_one.dart';
 import 'package:moonbook/home.dart';
 import 'package:moonbook/moonsaga/main_screen.dart';
 import 'package:moonbook/resume.dart';
+import 'package:moonbook/snake.dart';
 import 'package:moonbook/utils.dart';
 
 void main() {
@@ -55,7 +56,7 @@ class _PortfolioMainPageState extends State<PortfolioMainPage> {
               },
             ),
             IconButton(
-              icon: Icon(Icons.note),
+              icon: Image.asset('assets/snake-icon.png', width: 24, height: 24),
               onPressed: () {
                 setState(() {
                   page = 2;
@@ -63,10 +64,18 @@ class _PortfolioMainPageState extends State<PortfolioMainPage> {
               },
             ),
             IconButton(
+              icon: Icon(Icons.note),
+              onPressed: () {
+                setState(() {
+                  page = 3;
+                });
+              },
+            ),
+            IconButton(
                 icon: Icon(Icons.science),
                 onPressed: () {
                   setState(() {
-                    page = 3;
+                    page = 4;
                   });
                 }),
             IconButton(
@@ -87,8 +96,10 @@ class _PortfolioMainPageState extends State<PortfolioMainPage> {
       case 1:
         return MyGameApp();
       case 2:
-        return ResumePage();
+        return SnakeGame();
       case 3:
+        return ResumePage();
+      case 4:
         return MoonSagaWidget();
       default:
         return PortfolioHomePage();
