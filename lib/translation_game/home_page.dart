@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:moonbook/translation_game/disclaimer.dart';
 import 'package:moonbook/translation_game/demo_page.dart';
+import 'package:moonbook/translation_game/score_mode_page.dart';
 
 class TranslationGameHomePage extends StatefulWidget {
   const TranslationGameHomePage({super.key});
@@ -104,7 +105,15 @@ class TranslationGameHomePageState extends State<TranslationGameHomePage>
               ),
               const SizedBox(height: 10),
               ElevatedButton(
-                onPressed: null,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          const TranslationGameScoreModeWidget(),
+                    ),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
                   padding:
@@ -115,7 +124,7 @@ class TranslationGameHomePageState extends State<TranslationGameHomePage>
                   ),
                 ),
                 child: const Text(
-                  'Score Mode (Coming Soon)',
+                  'Score Mode',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
