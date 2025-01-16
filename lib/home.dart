@@ -208,6 +208,9 @@ class _PortfolioHomePageState extends State<PortfolioHomePage>
               KofiButton(
                 kofiName: 'hyunjaemoon',
                 kofiColor: KofiColor.Black,
+                style: ButtonStyle(
+                  foregroundColor: WidgetStateProperty.all(Colors.white),
+                ),
               ),
               SizedBox(height: screenHeight * 0.02),
             ]),
