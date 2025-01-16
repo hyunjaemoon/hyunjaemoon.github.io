@@ -1,12 +1,16 @@
 import 'dart:math';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_donation_buttons/donationButtons/ko-fiButton.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:moonbook/toys/chatbot.dart';
 import 'package:moonbook/utils.dart';
 import 'package:simple_icons/simple_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PortfolioHomePage extends StatefulWidget {
+  const PortfolioHomePage({super.key});
+
   @override
   _PortfolioHomePageState createState() => _PortfolioHomePageState();
 }
@@ -199,6 +203,11 @@ class _PortfolioHomePageState extends State<PortfolioHomePage>
                     },
                   ),
                 ],
+              ),
+              SizedBox(height: screenHeight * 0.02),
+              KofiButton(
+                kofiName: 'hyunjaemoon',
+                kofiColor: KofiColor.Black,
               ),
               SizedBox(height: screenHeight * 0.02),
             ]),

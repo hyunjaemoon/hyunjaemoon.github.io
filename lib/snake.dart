@@ -7,6 +7,8 @@ import 'package:moonbook/snake_ai.dart';
 import 'package:moonbook/utils.dart';
 
 class SnakeGame extends StatefulWidget {
+  const SnakeGame({super.key});
+
   @override
   _SnakeGameState createState() => _SnakeGameState();
 }
@@ -177,7 +179,7 @@ class _SnakeGameState extends State<SnakeGame> {
         bottomNavigationBar: copyrightBottomAppBar(context),
         body: Container(
           alignment: Alignment.center,
-          color: Theme.of(context).colorScheme.background,
+          color: Theme.of(context).colorScheme.surface,
           child: Column(
             children: [
               Padding(

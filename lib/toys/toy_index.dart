@@ -6,6 +6,8 @@ import 'package:moonbook/toys/chatbot.dart';
 import 'package:moonbook/utils.dart';
 
 class AiHomePage extends StatefulWidget {
+  const AiHomePage({super.key});
+
   @override
   _AiHomePageState createState() => _AiHomePageState();
 }

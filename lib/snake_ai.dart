@@ -55,12 +55,14 @@ class SnakeAI {
         int newX = current['x'] + direction[0];
         int newY = current['y'] + direction[1];
 
-        if (newX < 0 || newY < 0 || newX >= 20 || newY >= 20)
+        if (newX < 0 || newY < 0 || newX >= 20 || newY >= 20) {
           continue; // check boundaries
+        }
 
         int index = newY * 20 + newX;
-        if (closedSet.contains(index) || snake.contains(index))
+        if (closedSet.contains(index) || snake.contains(index)) {
           continue; // check closedSet or snake body
+        }
 
         double tentativeG = current['g'] + 1;
         if (!nodes.containsKey('$newX|$newY') ||
