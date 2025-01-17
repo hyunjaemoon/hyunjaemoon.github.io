@@ -1,6 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+const privacyNotice = """
+This page is powered by Google's Gemini AI model. By using this widget, you acknowledge that:
+
+- Your messages will be processed by Google's AI services
+- Messages are not stored permanently but are used in the current session
+- Personal information should not be shared in conversations
+- The AI may occasionally provide inaccurate information
+
+For more information about Gemini's data handling, please visit [Gemini Apps Privacy Notice](https://support.google.com/gemini/answer/13594961?hl=en#privacy_notice).
+""";
 
 Map<String, String> urlMap = {
   'linkedin': 'https://www.linkedin.com/in/hyunjaemoon/',
@@ -45,5 +57,40 @@ BottomAppBar copyrightBottomAppBar(BuildContext context) {
         textAlign: TextAlign.center,
       ),
     ),
+  );
+}
+
+Future<void> showPrivacyDialog(BuildContext context) {
+  return showDialog(
+    context: context,
+    barrierDismissible: false,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text(
+          'Privacy Notice',
+          style: GoogleFonts.roboto(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        content: SingleChildScrollView(
+          child: MarkdownBody(
+            data: privacyNotice,
+            onTapLink: (text, href, title) {
+              if (href != null) {
+                launchUrl(Uri.parse(href));
+              }
+            },
+          ),
+        ),
+        actions: <Widget>[
+          TextButton(
+            child: const Text('I Acknowledge'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
   );
 }

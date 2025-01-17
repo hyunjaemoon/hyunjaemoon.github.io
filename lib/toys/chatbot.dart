@@ -50,6 +50,14 @@ class _ChatbotScreenState extends State<ChatbotScreen> {
   final _messages = [("Hyun Jae Moon", "Ask me anything! 한국말도 가능합니다!")];
   bool _chatEnabled = true;
 
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      showPrivacyDialog(context);
+    });
+  }
+
   Future<void> _scrollToBottom() async {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (scrollController.hasClients) {

@@ -33,9 +33,10 @@ class _AiHomePageState extends State<AiHomePage> {
                 tooltip: "Translation Game",
                 icon: Image.asset(
                   "assets/translation_video_game_logo.png",
-                  fit: BoxFit.cover, // Zoom in the image to fit the IconButton
+                  fit: BoxFit.cover,
                 ),
-                onPressed: () {
+                onPressed: () async {
+                  await showPrivacyDialog(context);
                   launchUrlCheck('linguaghost');
                 },
               ),

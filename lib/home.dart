@@ -6,7 +6,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:moonbook/toys/chatbot.dart';
 import 'package:moonbook/utils.dart';
 import 'package:simple_icons/simple_icons.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class PortfolioHomePage extends StatefulWidget {
   const PortfolioHomePage({super.key});
