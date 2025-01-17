@@ -35,8 +35,7 @@ class _AiHomePageState extends State<AiHomePage> {
                   "assets/translation_video_game_logo.png",
                   fit: BoxFit.cover,
                 ),
-                onPressed: () async {
-                  await showPrivacyDialog(context);
+                onPressed: () {
                   launchUrlCheck('linguaghost');
                 },
               ),
